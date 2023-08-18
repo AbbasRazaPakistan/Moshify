@@ -271,7 +271,13 @@ a {
 .card--secondary .badge--secondary {
   background-color: #03caec;
 }
+.card--primary .badge--primary {
+  background-color: #1c6ae0;
+}
 /* Plans */
+.plan {
+  transition: transform 0.2s ease-out;
+}
 .plan__name {
   color: #fff;
   margin: 0;
@@ -297,6 +303,9 @@ a {
   margin-bottom: 2rem;
   letter-spacing: 1px;
 }
+.plan--popular {
+  transform: scale(1.1);
+}
 .plan--popular .card__header {
   position: relative;
 }
@@ -305,8 +314,14 @@ a {
   width: 40px;
   display: inline-block;
   position: absolute;
-  top: -5px;
+  top: -6px;
   right: 5%;
+}
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 @media screen and (min-width: 1024px) {
   .plan__name {
@@ -379,9 +394,15 @@ a {
 .grid {
   display: grid;
 }
+
 @media screen and (min-width: 768px) {
   .grid--1x2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /* Testimonials */
@@ -594,4 +615,12 @@ a {
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
+}
+/* Plan Block */
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+.grid .card {
+  max-width: 500px;
+  margin: 0 auto;
 }
